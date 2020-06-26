@@ -1,0 +1,27 @@
+* {
+  /* box-sizing: border-box; */
+  font-family: 'Courier New', Courier, monospace
+}
+
+body {
+  background-color: #e6e6e6;
+}
+
+h1 {
+  color: #5c5d5f;
+  font-weight: extra-bold;
+  font-size: 28px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+/* Game Canvas */
+.mainCanvas { 
+  text-align: center;
+  
+}
+
+#gameCanvas {
+  background-color: #082547;
+  border: 5px solid #666;
+}
