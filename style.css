@@ -1,6 +1,6 @@
 * {
   /* box-sizing: border-box; */
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Space Mono', monospace;
 }
 
 body {
@@ -9,14 +9,14 @@ body {
 
 h1 {
   color: #5c5d5f;
-  font-weight: extra-bold;
+  font-weight: bold;
   font-size: 28px;
   text-align: center;
   margin: 40px auto;
 }
 
 /* Game Canvas */
-.mainCanvas { 
+/* .mainCanvas { 
   text-align: center;
   
 }
@@ -24,4 +24,4 @@ h1 {
 #gameCanvas {
   background-color: #082547;
   border: 5px solid #666;
-}
+} */
