@@ -2,7 +2,7 @@
 
 <a href="https://izzycsy.github.io/proj1-alienInvaders/">Alien Invaders</a>
 
-### Project Brief:
+### Project Brief: 
 - Game to display in browser
 - Incorporate HTML, CSS, and JavaScript files
 - DOM manipulation which allows scripts to dynamically access content, structure and style of documents; updating the data of the page without the need to refresh
