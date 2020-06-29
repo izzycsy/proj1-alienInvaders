@@ -54,8 +54,6 @@ function setup() {
   player = new Spaceship();
   createAliens(); //call createAliens func
   textFont("Space Mono");
-  // imageMode(CENTER);
-  
 }
 
 //Func to center canvas when windowResized
