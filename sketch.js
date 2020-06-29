@@ -1,6 +1,6 @@
 console.log("hello script js");
 
-let canvas; //main.js
+let cnv; //to center
 let player;
 let bgColor;
 let pauseMode = false; //to start game wo a pause
@@ -30,18 +30,32 @@ function preload() {
   alienCC = loadImage("png/alienCC.png");
 }
 
+//prioritse first bec windowResized, need to refresh to re-center
+function centerCanvas() {
+  var x = (windowWidth - width) / 2; //x, y to centralise canvas
+  var y = (windowHeight - height);
+  cnv.position(x, y); 
+}
+
 //setup canvas
 // canvas = document.getElementById("gameCanvas");
 function setup() {
-  canvas = createCanvas(800, 600);
-  canvas.id("AlienInvaders"); //to enable CSS
+  cnv = createCanvas(800, 600);
+  // cnv.parent("toCenter");
+  centerCanvas();
+  cnv.id("AlienInvaders"); //to enable CSS
   bgColor = color("#082547");
   stroke("#666");
   strokeWeight(5);
   frameRate(20); //10 frames per second
   player = new Spaceship();
   createAliens(); //call createAliens func
-  imageMode(CENTER);
+  // imageMode(CENTER);
+}
+
+//Func to center canvas when windowResized
+function windowResized() {
+  centerCanvas;
 }
 
 //Func continuously executes the lines of code contained inside its block until stopped
