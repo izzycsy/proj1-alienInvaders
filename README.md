@@ -1,5 +1,7 @@
 # SEI-23 Project 1 - Alien Invaders
 
+<a href="https://izzycsy.github.io/proj1-alienInvaders/>Alien Invaders</a>
+
 ### Project Brief:
 - Game to display in browser
 - Incorporate HTML, CSS, and JavaScript files
@@ -26,5 +28,5 @@ An adaptation of coin-op video arcade game Space Invaders. The goal is to defeat
 - Components: GameCanvas, player, spaceship, aliens, bullets, scoring, lives
 
 #### Authors & Acknowledgment:
-- Daniel Schiffman coding train challenge <https://www.youtube.com/watch?v=KnUqSQAHQSg>
-- Daniel Kaye coding challenge <https://editor.p5js.org/danno484/sketches/zzO5nmnEg>
+- Daniel Schiffman coding train <a href="https://www.youtube.com/watch?v=KnUqSQAHQSg">challenge</a>
+- Daniel Kaye coding  <a href="https://editor.p5js.org/danno484/sketches/zzO5nmnEg">challenge</a>
