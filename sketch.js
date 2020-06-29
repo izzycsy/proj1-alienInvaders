@@ -19,6 +19,8 @@ let alienDirection = "left";
 let bullets = []; //bullet.js, to store bullets
 
 let gameOverBool = false; //gameover, in func spacebar
+// let ele; //to store MediaElement
+// let gameIsPlaying = false; //to pause when clicked 
 
 //preload alien PNGs
 function preload() {
@@ -51,7 +53,9 @@ function setup() {
   frameRate(10); //10 frames per second
   player = new Spaceship();
   createAliens(); //call createAliens func
+  textFont("Space Mono");
   // imageMode(CENTER);
+  
 }
 
 //Func to center canvas when windowResized
@@ -78,8 +82,8 @@ function draw() {
       }
     }
 
-    if (pauseMode) {
-    }
+    // if (pauseMode) {
+    // }
 
     drawBullet(); //func drawBullets
     drawAliens(); //func drawAliens
@@ -89,9 +93,26 @@ function draw() {
   }
 }
 
+// function mouseClicked() {
+//   //mouse over canvas when clicked
+//   if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+//       background(800, 600); //canvas dimension
+//     }
+//     if (gameIsPlaying) {
+//       ele.pause();
+//       gameIsPlaying = false;
+//       text("click to resume", width / 2, height - height / 4);
+//     } else {
+//       //loop game
+//       ele.loop();
+//       gameIsPlaying = true;
+//       text("click to pause!", width / 2, height / 4);
+//     }
+// }
+
 //Func for unPauseInstruction
 function drawUnpauseInstructions() {
-  //To start the game
+  //When click on another window, gameOnPause
   noStroke();
   fill(255);
   textAlign(CENTER);
