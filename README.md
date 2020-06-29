@@ -1,6 +1,6 @@
 # SEI-23 Project 1 - Alien Invaders
 
-<a href="https://izzycsy.github.io/proj1-alienInvaders/> Alien Invaders </a>
+<a href="https://izzycsy.github.io/proj1-alienInvaders/">Alien Invaders</a>
 
 ### Project Brief:
 - Game to display in browser
