@@ -30,30 +30,32 @@ function preload() {
   alienCC = loadImage("png/alienCC.png");
 }
 
-//prioritse first bec windowResized, need to refresh to re-center
+//Prioritsed first bec windowResized, need to refresh to re-center
+//Seq 1.1 centerCanvas
 function centerCanvas() {
   var x = (windowWidth - width) / 2; //x, y to centralise canvas
-  var y = (windowHeight - height);
+  var y = (windowHeight - height) / 1.5;
   cnv.position(x, y); 
 }
 
 //setup canvas
-// canvas = document.getElementById("gameCanvas");
+//Seq 1.2 centerCanvas 
 function setup() {
-  cnv = createCanvas(800, 600);
+  cnv = createCanvas(800, 550);
   // cnv.parent("toCenter");
   centerCanvas();
   cnv.id("AlienInvaders"); //to enable CSS
   bgColor = color("#082547");
   stroke("#666");
   strokeWeight(5);
-  frameRate(20); //10 frames per second
+  frameRate(10); //10 frames per second
   player = new Spaceship();
   createAliens(); //call createAliens func
   // imageMode(CENTER);
 }
 
 //Func to center canvas when windowResized
+//Seq 1.3 centerCanvas
 function windowResized() {
   centerCanvas;
 }
