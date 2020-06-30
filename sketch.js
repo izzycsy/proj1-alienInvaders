@@ -21,7 +21,7 @@ let score = 0; //func drawScore
 
 let gameOverBool = false; //gameover, in func spacebar
 // let ele; //to store MediaElement
-// let gameIsPlaying = false; //to pause when clicked 
+// let gameIsPlaying = true; //to start unpaused
 
 //preload alien PNGs
 function preload() {
@@ -81,9 +81,9 @@ function draw() {
         moveAliens();
       }
     }
-
-    // if (pauseMode) {
-    // }
+    if (pauseMode) { 
+      drawUnpauseInstructions();
+    }
 
     drawBullet(); //func drawBullets
     drawAliens(); //func drawAliens
@@ -93,11 +93,11 @@ function draw() {
   }
 }
 
-// function mouseClicked() {
-//   //mouse over canvas when clicked
-//   if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
-//       background(800, 600); //canvas dimension
-//     }
+// function mouseClicked() { //ele is for music
+  //mouse over canvas when clicked
+  // if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+      // background(800, 600); //canvas dimension
+    // }
 //     if (gameIsPlaying) {
 //       ele.pause();
 //       gameIsPlaying = false;
@@ -116,9 +116,10 @@ function drawUnpauseInstructions() {
   noStroke();
   fill("#fff");
   textAlign(CENTER);
-  textSize(18);
+  textSize(14);
   textFont("Space Mono");
-  text("click to play", width / 2, height - height / 4); // "width/2" is center, "height" is in 4/4
+  text("click on screen to play", width / 2, height - height / 4); // "width/2" is center, "height" is in 4/4
+  text("press P to resume", width / 2, (height - height / 4) + 25); // +25 to put text below "click tp play"
 }
 
 //Create aliens
@@ -129,8 +130,8 @@ function createAliens() {
   //create row 1 of alienA && alienAA
   for (i = 0; i < 24; i++) {
     //20 aliens to appear
-    aliens[i] = new Alien(startingX, startingY, 25, 25, alienA, alienAA); //30 30 is the alien size
-    startingX += 30;
+    aliens[i] = new Alien(startingX, startingY, 25, 25, alienA, alienAA, 10); //30 30 is the alien size, 10 refers to 10 pts
+    startingX += 30; 
 
     if (startingX > width - 30) {
       startingX = 70; //if touch wall, create a new row
@@ -140,7 +141,7 @@ function createAliens() {
   //create row 2 of alienB && alienBB
   for (i = 24; i < 48; i++) {
     //20 aliens to appear
-    aliens[i] = new Alien(startingX, startingY, 25, 25, alienB, alienBB); //30 30 is the alien size
+    aliens[i] = new Alien(startingX, startingY, 25, 25, alienB, alienBB, 10); //30 30 is the alien size
     startingX += 30;
 
     if (startingX > width - 30) {
@@ -151,7 +152,7 @@ function createAliens() {
   //create row 3 of alienC && alienCC
   for (i = 48; i < 72; i++) {
     //20 aliens to appear
-    aliens[i] = new Alien(startingX, startingY, 25, 25, alienC, alienCC); //30 30 is the alien size
+    aliens[i] = new Alien(startingX, startingY, 25, 25, alienC, alienCC, 10); //30 30 is the alien size
     startingX += 30;
 
     if (startingX > width - 30) {
@@ -243,6 +244,13 @@ function keyPressed() {
   if ((keyCode === RETURN || keyCode === ENTER) && gameOverBool) {
     reset();
   }
+  if (key === "p") { //setting key "p" as pause
+    if (!pauseMode) {
+      pauseMode = true;
+    } else {
+      pauseMode = false;
+    }
+  }
   return false; //prevent bugs from default browser behaviours
 }
 
@@ -293,8 +301,9 @@ function killedAlien() {
 function drawScore() {
   noStroke();
   fill("#fff");
-  textSize(16);
+  textSize(14);
   textAlign(LEFT);
   textFont("Space Mono");
-  text("SCORE: ", 20, 25);
+  text("SCORE: " + score, 20, 25); //score comes after "score:"
+  // text(score, 90, 25); //position of score
 }
