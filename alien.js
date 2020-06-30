@@ -1,10 +1,7 @@
 //Alien
 
-// var x = 50;
-// var y = 50;
-
 class Alien {
-  constructor(x, y, width, height, imgA, imgAA) {
+  constructor(x, y, width, height, imgA, imgAA, pts) {
     this.xAxis = x;
     this.yAxis = y;
     this.alienWidth = width;
@@ -14,6 +11,7 @@ class Alien {
     this.currentImage = "A";
     this.alive = true;
     this.explosionTimer = 3; //link to this.die
+    this.points = pts; //link to hitAlien, add to constructor
   }
 
   draw() {
@@ -72,7 +70,7 @@ class Alien {
     push(); //start drawing explosion
     translate(this.xAxis, this.yAxis); //orginate the explosion from alien's center
     noFill();
-    stroke(255);
+    stroke("#fff");
     strokeWeight(2);
 
     for (let i = 0; i < 10; i++) {
