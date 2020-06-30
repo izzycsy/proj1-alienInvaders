@@ -3,7 +3,7 @@
 class Spaceship {
   constructor() { //no arguments
     this.xAxis = width / 2; //start position
-    this.yAxis = height - 30; //posotion from bottom of screen
+    this.yAxis = height - 50; //posotion from bottom of screen
     this.spaceshipWidth = 35;
     this.spaceshipHeight = 10;
     this.cannonWidth = 10; 
