@@ -37,7 +37,7 @@ function preload() {
 //Seq 1.1 centerCanvas
 function centerCanvas() {
   var x = (windowWidth - width) / 2; //x, y to centralise canvas
-  var y = (windowHeight - height) / 1.5;
+  var y = (windowHeight - height) / 1.8;
   cnv.position(x, y); 
 }
 
@@ -189,7 +189,7 @@ function alienReachEdge() {
     //left wall || right wall
     if (
       (alien.xAxis < 20 && alien.alive) ||
-      (alien.xAxis > width - 20 && alien.alive)
+      (alien.xAxis > width - 40 && alien.alive) //max (-40) for alien to not go out screen
     ) {
       //increase no. to prevent clipping
       reachEdge = true; //if true, reverse direction
