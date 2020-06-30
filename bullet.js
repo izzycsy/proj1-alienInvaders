@@ -12,7 +12,7 @@ class Bullet {
 
   draw() {
     if (!this.hit) {
-      stroke(255);
+      stroke("#fff07f");
       strokeWeight(5);
       line(this.xAxis, this.yAxis, this.xAxis, this.yAxis - this.length); //draw a line that orginates from xAxis & yAxis, the 2nd xAxis does not move
       if (this.yAxis < 0) {
