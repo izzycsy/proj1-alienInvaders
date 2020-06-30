@@ -37,7 +37,7 @@ function preload() {
 //Seq 1.1 centerCanvas
 function centerCanvas() {
     var x = (windowWidth - width) / 2; //x, y to centralise canvas
-    var y = (windowHeight - height) / 1.3;
+    var y = (windowHeight - height) / 1.6;
     cnv.position(x, y);
 }
 
