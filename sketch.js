@@ -17,6 +17,7 @@ let speed = 10; //alien move once every 10 frames, lower no. = faster
 let alienDirection = "left";
 
 let bullets = []; //bullet.js, to store bullets
+let score = 0; //func drawScore
 
 let gameOverBool = false; //gameover, in func spacebar
 // let ele; //to store MediaElement
@@ -47,7 +48,7 @@ function setup() {
   // cnv.parent("toCenter");
   centerCanvas();
   cnv.id("AlienInvaders"); //to enable CSS
-  bgColor = color("#082547");
+  bgColor = color("#0e2c54");
   stroke("#666");
   strokeWeight(5);
   frameRate(10); //10 frames per second
@@ -69,6 +70,7 @@ function draw() {
     background(bgColor);
     player.moveSpaceship();
     player.drawPlayer();
+    drawScore(); //add func to show score
 
     if (!pauseMode) {
       //If game is not in pause mode, run func that incrementally move everything else
@@ -112,9 +114,10 @@ function draw() {
 function drawUnpauseInstructions() {
   //When click on another window, gameOnPause
   noStroke();
-  fill(255);
+  fill("#fff");
   textAlign(CENTER);
   textSize(18);
+  textFont("Space Mono");
   text("click to play", width / 2, height - height / 4); // "width/2" is center, "height" is in 4/4
 }
 
@@ -267,6 +270,8 @@ function hitAlien() {
       ) {
         alien.alive = false; //setting alien is ded
         bullet.hit = true; //setting bullet has hit, bullet disappears
+        
+        score += alien.points; //when alien is hit, alien.js; points
       }
     }
   }
@@ -282,4 +287,14 @@ function killedAlien() {
     }
   }
   return ded;
+}
+
+//func drawScore on screen
+function drawScore() {
+  noStroke();
+  fill("#fff");
+  textSize(16);
+  textAlign(LEFT);
+  textFont("Space Mono");
+  text("SCORE: ", 20, 25);
 }
