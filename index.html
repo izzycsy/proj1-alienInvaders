@@ -23,14 +23,15 @@
   <body>
     <h1>Alien Invaders</h1>
 
-    <p id="lineOne"> 
-      <strong>How to Play:</strong> 
-    </br>press <strong>space bar</strong> to shoot
-    </p>
-    
-    <p id="lineTwo">
-    <i>each alien hit scores you 10 points | press <strong>P</strong> to pause game</i>
-    </p>
+    <!-- toggle gameInstruction popup div -->
+    <div class="gameInstruction" onclick="howToPlay()">
+      How to Play
+      <span class="gameInstructionText" id="gameInstructionPopup">
+        press <strong>space bar</strong> to shoot
+      </br><i>each alien hit scores you 10 points | press <strong>P</strong> to pause game</i>
+      </span>
+    </div>
 
   </body>
+
 </html>

@@ -5,10 +5,7 @@
 
 body {
   background-color: #e6e6e6;
-  /* justify-items: center; */
-  /* justify-content: center; */
 }
-/* add div block */
 
 h1 {
   color: #0e2c54;
@@ -18,7 +15,7 @@ h1 {
   margin: 20px 0 10px 0;
 }
 
-#lineOne {
+/* #lineOne {
   font-size: 14px;
   text-align: center;
   margin: 10px 0px 0px 0px;
@@ -29,4 +26,77 @@ h1 {
   text-align: center;
   margin: 10px 0 10px 0;
   padding-bottom: 10px;
+} */
+
+/* gameInstruction button */
+.gameInstruction {
+  font-size: 16px;
+  text-align: center;
+  /* margin: 10px 0px 0px 0px; */
+
+  position: relative;
+  /* display: inline-block; */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gameInstructionText {
+  font-size: 12px;
+  text-align: center;
+}
+
+.gameInstruction .gameInstructionText {
+  visibility: hidden;
+  width: 500px;
+  background-color: #666;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -50%; /* position hover */
+  /* left: 50%; */
+  margin-left: -300px;
+}
+
+/* transparent arrow to close popup */
+.gameInstruction .gameInstructionText::after {
+  content: "";
+  position: absolute; 
+  /* top: 0%;  */ /* hide little arrow in hover */
+  /* left: 50%; */
+  /* margin-left: -5px; */
+  border-width: 5px;
+  border-style: solid;
+  border-color: #666 transparent transparent transparent;
+}
+
+/* Toggle hide & show popup */
+.gameInstruction .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fadeIn) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
