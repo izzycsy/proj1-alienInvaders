@@ -135,7 +135,7 @@ function createAliens() {
   let startingY = 110; //gap bwtn canvas top and 1st row of aliens
 
   //create row 1 of alienA && alienAA
-  for (i = 0; i < 24; i++) { //original < 24 aliens
+  for (i = 0; i < 1; i++) { //original < 24 aliens
     //24 per row
     //20 aliens to appear
     aliens[i] = new Alien(startingX, startingY, 25, 25, alienA, alienAA, 10); //30 30 is the alien size, 10 refers to 10 pts
@@ -147,28 +147,28 @@ function createAliens() {
       startingY -= 30;
     }
   }
-  //create row 2 of alienB && alienBB
-  for (i = 24; i < 48; i++) {
-      //20 aliens to appear
-      aliens[i] = new Alien(startingX, startingY, 25, 25, alienB, alienBB, 10); //30 30 is the alien size
-      startingX += 30;
+  // //create row 2 of alienB && alienBB
+  // for (i = 24; i < 48; i++) {
+  //     //20 aliens to appear
+  //     aliens[i] = new Alien(startingX, startingY, 25, 25, alienB, alienBB, 10); //30 30 is the alien size
+  //     startingX += 30;
 
-      if (startingX > width - 30) {
-          startingX = 60; //if touch wall, create a new row
-          startingY -= 30;
-      }
-  }
-  // //create row 3 of alienC && alienCC
-  for (i = 48; i < 72; i++) {
-      //20 aliens to appear
-      aliens[i] = new Alien(startingX, startingY, 25, 25, alienC, alienCC, 10); //30 30 is the alien size
-      startingX += 30;
+  //     if (startingX > width - 30) {
+  //         startingX = 60; //if touch wall, create a new row
+  //         startingY -= 30;
+  //     }
+  // }
+  // // //create row 3 of alienC && alienCC
+  // for (i = 48; i < 72; i++) {
+  //     //20 aliens to appear
+  //     aliens[i] = new Alien(startingX, startingY, 25, 25, alienC, alienCC, 10); //30 30 is the alien size
+  //     startingX += 30;
 
-      if (startingX > width - 30) {
-          startingX = 60; //if touch wall, create a new row
-          startingY -= 30;
-      }
-  }
+  //     if (startingX > width - 30) {
+  //         startingX = 60; //if touch wall, create a new row
+  //         startingY -= 30;
+  //     }
+  // }
 }
 
 //draw aliens
@@ -327,14 +327,13 @@ function drawScore() {
 function playerWin() {
   gameOverBool = true; //gameOver is true
   if ((score = 10)) { //270
-    background(0, 255);
+    background(0, "#0e2c54");
     print("player cleared all aliens");
     textSize(25);
     stroke(0);
     fill("#fff");
     textAlign(CENTER);
-    textFont("SpaceMono");
-    text("Congratulations, you won!", width / 2, height / 2); //click to restart?
+    text("Congratulations, you won (๑•̀ㅂ•́)و✧", width / 2, height / 2);
   }
   noLoop();
 }
