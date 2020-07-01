@@ -13,7 +13,7 @@ let alienBB;
 let alienC;
 let alienCC;
 
-let speed = 10; //alien move once every 10 frames, lower no. = faster
+let speed = 5; //alien move once every 5 frames, lower no. = faster
 let alienDirection = "left";
 
 let bullets = []; //bullet.js, to store bullets
@@ -111,6 +111,7 @@ function draw() {
 // }
 
 //Func for unPauseInstruction
+
 function drawUnpauseInstructions() {
     //When click on another window, gameOnPause
     noStroke();
