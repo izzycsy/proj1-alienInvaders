@@ -329,7 +329,7 @@ function drawScore() {
 //func playerWin
 function playerWin() {
   gameOverBool = true; //gameOver is true
-  if ((score = 270)) { //270
+  if ((score = 720)) { //720
     background(0, "#0e2c54");
     print("player cleared all aliens");
     textSize(25);
