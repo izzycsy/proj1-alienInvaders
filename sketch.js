@@ -4,7 +4,6 @@ let cnv; //to center
 let player;
 let bgColor;
 let pauseMode = false; //to start game wo a pause
-
 let aliens = []; //to store aliens & png, total 72 aliens
 let alienA;
 let alienAA;
@@ -15,13 +14,9 @@ let alienCC;
 
 let speedAlien = 8; //alien speed, X frames /sec lower no. = faster
 let alienDirection = "left";
-
 let bullets = []; //bullet.js, to store bullets
 let score = 0; //func drawScore
-
 let gameOverBool = false; //gameover if true, in func spacebar
-// let ele; //to store MediaElement
-// let gameIsPlaying = true; //to start unpaused
 
 //preload alien PNGs
 function preload() {
@@ -46,6 +41,34 @@ function centerCanvas() {
 function setup() {
   cnv = createCanvas(800, 550);
   centerCanvas();
+  // bgColor = color("#0e2c54");
+  // stroke("#666");
+  // strokeWeight(5);
+  // frameRate(25); //spaceship + bullet 20 frames /sec, higher no. = faster
+  // player = new Spaceship();
+  // createAliens(); //call createAliens func
+  // textFont("Space Mono");
+  resetSketch(); //apply resetSketch here so code is not repeated
+}
+
+//Func to center canvas when windowResized
+//Seq 1.3 centerCanvas
+function windowResized() {
+  centerCanvas;
+}
+
+//create restart button (for game clear)
+function drawRestart() {
+  noStroke();
+  fill("fff");
+  textSize(14);
+  textAlign(RIGHT);
+  // textFont("SpaceMono");
+  text("RESTART", 780, 25);
+}
+
+//shift setup() to resetSketch
+function resetSketch() {
   bgColor = color("#0e2c54");
   stroke("#666");
   strokeWeight(5);
@@ -55,10 +78,9 @@ function setup() {
   textFont("Space Mono");
 }
 
-//Func to center canvas when windowResized
-//Seq 1.3 centerCanvas
-function windowResized() {
-  centerCanvas;
+function mouseClicked() {
+  drawRestart();
+  resetSketch();
 }
 
 //Func continuously executes the lines of code contained inside its block until stopped
@@ -69,6 +91,7 @@ function draw() {
     player.moveSpaceship();
     player.drawPlayer();
     drawScore(); //add func to show score
+    drawRestart(); //show RESTART
 
     if (!pauseMode) {
       //If game is not in pause mode, run func that incrementally move everything else
@@ -91,33 +114,13 @@ function draw() {
     if (killedAlien()) {
       print("all aliens ded");
       playerWin();
-      resetAliens();
-      // resetGame();
     }
   } else {
     drawUnpauseInstructions();
   }
 }
 
-// function mouseClicked() { //ele is for music
-//mouse over canvas when clicked
-// if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
-// background(800, 600); //canvas dimension
-// }
-//     if (gameIsPlaying) {
-//       ele.pause();
-//       gameIsPlaying = false;
-//       text("click to resume", width / 2, height - height / 4);
-//     } else {
-//       //loop game
-//       ele.loop();
-//       gameIsPlaying = true;
-//       text("click to pause!", width / 2, height / 4);
-//     }
-// }
-
 //Func for unPauseInstruction
-
 function drawUnpauseInstructions() {
   //When click on another window, game will be pauseMode
   noStroke();
@@ -135,7 +138,7 @@ function createAliens() {
   let startingY = 110; //gap bwtn canvas top and 1st row of aliens
 
   //create row 1 of alienA && alienAA
-  for (i = 0; i < 24; i++) { //original < 24 aliens
+  for (i = 0; i < 24; i++) {//original < 24 aliens
     //24 per row
     //20 aliens to appear
     aliens[i] = new Alien(startingX, startingY, 25, 25, alienA, alienAA, 10); //30 30 is the alien size, 10 refers to 10 pts
@@ -250,9 +253,6 @@ function keyPressed() {
   if (keyCode === RIGHT_ARROW) {
     player.changeDirection("right"); //spaceship goes right
   }
-  // if ((keyCode === RETURN || keyCode === ENTER) && gameOverBool) {
-  //   resetGame();
-  // }
   if (key === "p") {
     //setting key "p" as pause
     if (!pauseMode) {
@@ -307,11 +307,6 @@ function killedAlien() {
   return ded;
 }
 
-//func resetAliens, add to when all ded
-function resetAliens() {
-  createAliens();
-}
-
 //func drawScore on screen
 function drawScore() {
   noStroke();
@@ -320,13 +315,12 @@ function drawScore() {
   textAlign(LEFT);
   textFont("Space Mono");
   text("SCORE: " + score, 20, 25); //score comes after "score:"
-  // text(score, 90, 25); //position of score
 }
 
 //func playerWin
 function playerWin() {
   gameOverBool = true; //gameOver is true
-  if ((score = 10)) { //270
+  if ((score = 270)) { //270
     background(0, "#0e2c54");
     print("player cleared all aliens");
     textSize(25);
@@ -336,29 +330,12 @@ function playerWin() {
     text("Congratulations, you won (๑•̀ㅂ•́)و✧", width / 2, height / 2);
   }
   noLoop();
+    drawRestart();
+    // mouseClicked();
 }
-
-//create restart (for game clear)
-// function restart() {
-//   let resetButton = document.getElementById("lineOne");
-//   resetButton.textContent = "restart";
-//   resetButton.addEventListener("click", resetGame());
-// }
-
-//func resetGame
-// function resetGame() {
-//   score = 0;
-//   player = new Spaceship();
-//   resetAliens();
-//   for(let bullet of bullets) { //clear bullets
-//     bullet.hit = true;
-//   }
-  // noloop();
-// }
 
 //func for gameInstruction button
 function howToPlay() {
   var gameInstruction = document.getElementById("gameInstructionPopup");
   gameInstruction.classList.toggle("show");
-  // gameInstruction.addEventListener("click", howToPlay());
 }
