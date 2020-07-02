@@ -5,8 +5,6 @@
 ### Game: 
 An adaptation of coin-op video arcade game Space Invaders. The goal is to defeat a wave of descending swarm of aliens, using a horizontal moving spaceship, firing at as many aliens possible.
 
-<img src=" ">
-
 ### MVP:
 - Game to display in browser
 - Incorporate HTML, CSS, and JavaScript files
@@ -16,13 +14,19 @@ An adaptation of coin-op video arcade game Space Invaders. The goal is to defeat
 - Aliens to move downwards as game proceeds
 - DOM manipulation which allows scripts to dynamically access content, structure and style of documents; updating the data of the page without the need to refresh
 
-
 ### Other Features:
 - Typography to reflect pixel-like game
 - Score reflected when alien is shot
 - If bullet misses alien, game continues 
 - Game auto-start, pause, over-playerWin
 - Game restart
+
+### Game Play
+- Game Instruction
+<img src="./giphy-spaceBar.gif">
+
+- Sneakpeak of game
+<img src="./giphy-gamePlay.gif">
 
 ### Future Plans
 Increased difficulty: 
