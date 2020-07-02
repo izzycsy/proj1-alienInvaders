@@ -12,20 +12,20 @@ An adaptation of coin-op video arcade game Space Invaders. The goal is to defeat
 
 ### MVP:
 - Canvas of 800 x 600 px (w x h)
-- A spaceship (the player) and few rows of aliens
+- A spaceship (the player) and 3 rows of aliens
 - Spaceship to shoot aliens
 - Aliens to move downwards as game proceeds
 
 ### Other Features:
 - Typography to reflect pixel-like game
-- Scoreboard when alien is shot
-- Player no. of lives 
+- Score reflected when alien is shot
 - If bullet misses alien, game continues 
-- Game start, pause, over
+- Game auto-start, pause, over
+- Game restart
 
 ### Agile Workflow:
 - Build components of game into smaller segments before putting them 
-- Components: GameCanvas, player, spaceship, aliens, bullets, scoring, lives
+- Components: GameCanvas, player, spaceship, aliens, bullets, scoring, restart
 
 #### Authors & Acknowledgment:
 - Daniel Schiffman coding train <a href="https://www.youtube.com/watch?v=KnUqSQAHQSg">challenge</a>
