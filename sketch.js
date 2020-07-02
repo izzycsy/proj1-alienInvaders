@@ -18,6 +18,14 @@ let bullets = []; //bullet.js, to store bullets
 let score = 0; //func drawScore
 let gameOverBool = false; //gameover if true, in func spacebar
 
+document.addEventListener("click", mouseClickHandler, false); //false means no other options
+function mouseClickHandler() {
+  if (gameOverBool) {
+    // drawRestart();
+    resetSketch();
+  }
+}
+
 //preload alien PNGs
 function preload() {
   alienA = loadImage("png/alienA.png");
@@ -58,14 +66,14 @@ function windowResized() {
 }
 
 //create restart button (for game clear)
-function drawRestart() {
-  noStroke();
-  fill("fff");
-  textSize(14);
-  textAlign(RIGHT);
-  // textFont("SpaceMono");
-  text("RESTART", 780, 25);
-}
+// function drawRestart() {
+//   noStroke();
+//   fill("fff");
+//   textSize(14);
+//   textAlign(RIGHT);
+//   // textFont("SpaceMono");
+//   text("RESTART", 780, 25);
+// }
 
 //shift setup() to resetSketch
 function resetSketch() {
@@ -76,12 +84,13 @@ function resetSketch() {
   player = new Spaceship();
   createAliens(); //call createAliens func
   textFont("Space Mono");
+  loop();
 }
 
-function mouseClicked() {
-  drawRestart();
-  resetSketch();
-}
+// function mouseClicked() {
+//   drawRestart();
+//   resetSketch();
+// }
 
 //Func continuously executes the lines of code contained inside its block until stopped
 function draw() {
@@ -91,7 +100,7 @@ function draw() {
     player.moveSpaceship();
     player.drawPlayer();
     drawScore(); //add func to show score
-    drawRestart(); //show RESTART
+    // drawRestart(); //show RESTART
 
     if (!pauseMode) {
       //If game is not in pause mode, run func that incrementally move everything else
@@ -161,7 +170,7 @@ function createAliens() {
           startingY -= 30;
       }
   }
-  // //create row 3 of alienC && alienCC
+  //create row 3 of alienC && alienCC
   for (i = 48; i < 72; i++) {
       //20 aliens to appear
       aliens[i] = new Alien(startingX, startingY, 25, 25, alienC, alienCC, 10); //30 30 is the alien size
@@ -328,11 +337,12 @@ function playerWin() {
     fill("#fff");
     textAlign(CENTER);
     text("Congratulations, you won (๑•̀ㅂ•́)و✧", width / 2, height / 2);
+    text("click anywhere to restart", width / 2, (height / 2 + 40));
   }
   noLoop();
-    drawRestart();
-    // mouseClicked();
+  bullets=[];
 }
+
 
 //func for gameInstruction button
 function howToPlay() {
