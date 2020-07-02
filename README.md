@@ -28,7 +28,7 @@ An adaptation of coin-op video arcade game Space Invaders. The goal is to defeat
 - Sneakpeak of game
 <img src="./giphy-gamePlay.gif">
 
-
+<img src="./giphy-playerWin.gif">
 
 ### Future Plans
 Increased difficulty: 
