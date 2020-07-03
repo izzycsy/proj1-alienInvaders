@@ -38,8 +38,8 @@ Increased difficulty:
 - Responsive screen size
 - Better UI
 
-### Agile Workflow:
-- Build components of game into smaller segments before putting them 
+### Workflow:
+- Build components of game into smaller segments before piecing them together
 - Components: GameCanvas, player, spaceship, aliens, bullets, scoring, restart
 
 #### Authors & Acknowledgment:
