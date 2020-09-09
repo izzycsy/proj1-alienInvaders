@@ -38,7 +38,7 @@ Increased difficulty:
 - Responsive screen size
 - Better UI
 
-### Workflow:
+### Workflow
 - Build components of game into smaller segments before piecing them together
 - Components: GameCanvas, player, spaceship, aliens, bullets, scoring, restart
 
